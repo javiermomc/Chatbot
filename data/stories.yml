@@ -1,0 +1,88 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: tell time
+  steps:
+  - intent: ask_time
+  - action: action_tell_time
+  - action: utter_ask_again
+  
+- story: tell time on place
+  steps:
+  - intent: ask_time_place
+  - action: action_tell_time
+  - action: utter_ask_again
+
+- story: ask who
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: give name of human
+  steps:
+  - intent: give_name
+  - action: action_tell_name
+
+- story: good joke
+  steps:
+  - intent: ask_joke
+  - action: action_tell_joke
+  - intent: mood_great
+  - action: utter_good_joke
+
+- story: bad joke
+  steps:
+  - intent: ask_joke
+  - action: action_tell_joke
+  - intent: mood_unhappy
+  - action: utter_bad_joke
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: respond to weather
+  steps:
+  - intent: ask_weather
+  - action: utter_tell_weather
+
+- story: respond to intelligence
+  steps:
+  - intent: intelligence
+  - action: utter_know_everything
+
+- story: respond to hunger
+  steps:
+  - intent: hungry
+  - action: utter_tell_hungry
+  
+- story: respond to animals
+  steps:
+  - intent: ask_animal
+  - action: utter_favourite_animal
+

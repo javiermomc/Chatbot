@@ -1,0 +1,30 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Ask the time
+  steps:
+  - intent: ask_time
+  - action: action_tell_time
+  - action: utter_ask_again
+
+- rule: Ask the time on a certain place
+  steps:
+  - intent: ask_time_place
+  - action: action_tell_time
+  - action: utter_ask_again
+
+- rule: Given name
+  steps:
+  - intent: give_name
+  - action: action_tell_name
